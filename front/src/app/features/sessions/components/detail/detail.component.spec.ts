@@ -13,6 +13,7 @@ import { of } from 'rxjs';
 import { Teacher } from 'src/app/interfaces/teacher.interface';
 import { Session } from '../../interfaces/session.interface';
 import { TeacherService } from 'src/app/services/teacher.service';
+import { By } from '@angular/platform-browser';
 
 
 describe('DetailComponent', () => {
@@ -140,7 +141,23 @@ describe('DetailComponent', () => {
     expect(component.teacher).toEqual(teacherData);
   });
 
+  it('should not display delete button if user is not admin', () => {
+    component.isAdmin = false; // Simuler un utilisateur non admin
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    const deleteButton = compiled.querySelector('delete-button');
+    expect(deleteButton).toBeNull(); // Le bouton ne devrait pas exister
+  });
 
+  it('should display delete button if user is admin', () => {
+    component.isAdmin = true; // Simuler un utilisateur admin
+   
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    const deleteButton = compiled.querySelector('delete-button');
+    expect(deleteButton).toBeDefined(); // Le bouton devrait exister
+
+  });
 
 });
 
