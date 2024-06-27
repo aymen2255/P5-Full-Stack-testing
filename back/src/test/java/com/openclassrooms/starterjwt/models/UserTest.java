@@ -1,21 +1,17 @@
 package com.openclassrooms.starterjwt.models;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import java.time.LocalDateTime;
 import java.util.Set;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -97,33 +93,7 @@ public class UserTest {
 			user.setPassword(null);
 		});
 	}
-	
 
-	/*
-	 * @Test void testFirstNameNotNull() { User user = new User();
-	 * user.setEmail("johndoe@example.com"); user.setLastName("Doe");
-	 * user.setPassword("securepassword123"); user.setAdmin(true);
-	 * user.setCreatedAt(LocalDateTime.now());
-	 * user.setUpdatedAt(LocalDateTime.now());
-	 * 
-	 * Set<ConstraintViolation<User>> violations = validator.validate(user);
-	 * assertEquals(1, violations.size()); ConstraintViolation<User> violation =
-	 * violations.iterator().next(); assertEquals("ne peut pas être nul",
-	 * violation.getMessage()); assertEquals("firstName",
-	 * violation.getPropertyPath().toString()); }
-	 * 
-	 * @Test void testPasswordNotNull() { User user = new User();
-	 * user.setEmail("johndoe@example.com"); user.setLastName("Doe");
-	 * user.setFirstName("John"); user.setAdmin(true);
-	 * user.setCreatedAt(LocalDateTime.now());
-	 * user.setUpdatedAt(LocalDateTime.now());
-	 * 
-	 * Set<ConstraintViolation<User>> violations = validator.validate(user);
-	 * assertEquals(1, violations.size()); ConstraintViolation<User> violation =
-	 * violations.iterator().next(); assertEquals("ne peut pas être nul",
-	 * violation.getMessage()); assertEquals("password",
-	 * violation.getPropertyPath().toString()); }
-	 */
 	@Test
 	void testLastNameSize() {
 		User user = new User();
