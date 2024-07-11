@@ -42,8 +42,8 @@ VALUES ('John', 'Doe'),
 
 INSERT INTO USERS (first_name, last_name, admin, email, password)
 VALUES
-('Admin', 'Admin', true, 'yoga@studio.com', '$2a$10$.Hsa/ZjUVaHqi0tp9xieMeewrnZxrZ5pQRzddUXE/WjDu2ZThe6Iq'),
-('utilisateur_exemple', 'exemple', false, 'utilisateur@exemple.com', '$2b$12$.sh1Exu/0SGOEMWv0z.9i.MwnyWiPgyFyt3qnVueatUMqhCKKC5Fm');
+('Admin', 'Admin', true, 'yoga@studio.com', '$2a$10$B4edsb96F10PjxK5Lc4J4uOEygft7Yeg3b9zYlNnv50cvc5aSJSou'),
+('utilisateur_exemple', 'exemple', false, 'utilisateur@exemple.com', '$2a$10$B4edsb96F10PjxK5Lc4J4uOEygft7Yeg3b9zYlNnv50cvc5aSJSou');
 
 INSERT INTO SESSIONS
     (name, date, description, teacher_id, created_at, updated_at)
