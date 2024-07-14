@@ -48,5 +48,5 @@ VALUES
 INSERT INTO SESSIONS
     (name, date, description, teacher_id, created_at, updated_at)
 VALUES
-    ('Séance 1', '2022-10-01', 'Description pour la Séance 1', 1, NOW(), NOW()),
-    ('Séance 2', '2022-10-08', 'Description pour la Séance 2', 2, NOW(), NOW());
+    ('Seance 1', '2022-10-01', 'Description pour la Seance 1', 1, NOW(), NOW()),
+    ('Seance 2', '2022-10-08', 'Description pour la Seance 2', 2, NOW(), NOW());
