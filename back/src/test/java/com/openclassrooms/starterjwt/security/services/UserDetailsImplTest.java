@@ -1,14 +1,17 @@
 package com.openclassrooms.starterjwt.security.services;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@ExtendWith(MockitoExtension.class)
 class UserDetailsImplTest {
 
     @Test
     void testEquals_SameObject() {
-        UserDetailsImpl userDetails = UserDetailsImpl.builder().id(1L).build();
+        UserDetailsImpl userDetails = UserDetailsImpl.builder().id(1L).admin(false).build();
         assertTrue(userDetails.equals(userDetails));
     }
 
