@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { SessionService } from './services/session.service';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
+import { NgZone } from '@angular/core';
 
 
 describe('AppComponent', () => {
@@ -15,6 +16,7 @@ describe('AppComponent', () => {
   let sessionService: SessionService;
   let router: Router;
   let fixture: ComponentFixture<AppComponent>;
+  let ngZone: NgZone;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -33,6 +35,7 @@ describe('AppComponent', () => {
     sessionService = TestBed.inject(SessionService);
     router = TestBed.inject(Router);
     fixture.detectChanges();
+    ngZone = TestBed.inject(NgZone);
 
   });
 
@@ -62,7 +65,9 @@ describe('AppComponent', () => {
     const logOutSpy = jest.spyOn(sessionService, 'logOut');
     const navigateSpy = jest.spyOn(router, 'navigate');
 
-    component.logout();
+    ngZone.run(() => {
+      component.logout();
+    });
 
     expect(logOutSpy).toHaveBeenCalled();
     expect(navigateSpy).toHaveBeenCalledWith(['']);
